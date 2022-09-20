@@ -38,8 +38,9 @@ app.post('/api/notes', (req, res) => {
     fs.readFile('./db/db.json', 'utf8', (err, data) => {
         if (err) throw err; 
         const updatedNoteData = JSON.parse(data);
+        let uniqueId = (updatedNoteData.length).toString();
+        newNoteData.id = uniqueId;
         updatedNoteData.push(newNoteData);
-
         fs.writeFile('./db/db.json', JSON.stringify(updatedNoteData), err => {
             if (err) throw err;
         });
