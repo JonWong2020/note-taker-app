@@ -50,6 +50,31 @@ app.post('/api/notes', (req, res) => {
 
 });
 
+// DELETE request functions
+app.delete('/api/notes/:id', (req, res) => {
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+        if (err) throw err;
+        let notesData = JSON.parse(data);
+        const notesId = req.params.id;
+        let newNotesId = 0;
+
+        notesData = notesData.filter(currNote => {
+            return currNote.id != notesId;
+        });
+
+        for (currNote of notesData) {
+            currNote.id = newNotesId.toString();
+            newNotesId++;
+        }
+
+        fs.writeFile('./db/db.json', JSON.stringify(notesData), 'utf8', (err, data) =>{
+            if (err) throw err;
+        });
+
+        res.json(notesData);
+    });
+});
+
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)
 );
