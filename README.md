@@ -7,8 +7,8 @@
   * [Usage](#usage)
   * [Licenses](#licenses)
   * [Contributors](#contributors)
-  * [Languages/Resources](#Languages/Resources)
-  * [Demo/Screenshots](#Demo/Screenshots)
+  * [Resources](#resources)
+  * [Screenshots](#screenshots)
   * [Links](#links)
   * [Questions](#questions)
   
@@ -24,7 +24,7 @@
   ## Contributors
   Contributors:  Jonathan N. Wong
   
-  ## Languages/Resources
+  ## Resources
 
   * HTML
   * CSS
@@ -32,7 +32,7 @@
   * Node.js
   * Heroku
 
-  ## Demo/Screenshots
+  ## Screenshots
 
   
 
