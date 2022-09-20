@@ -1,7 +1,6 @@
 // libs to import
 const express = require('express');
 const fs = require('fs');
-const { request } = require('http');
 const path = require('path');
 
 // server ports
@@ -14,7 +13,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 // GET Request functions
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'), err => {
         if (err) throw err;
     });
